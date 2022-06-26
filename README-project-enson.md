@@ -2093,7 +2093,7 @@ terraform destroy -auto-approve
 
 ```bash
 PATH="$PATH:/usr/local/bin"
-ANS_KEYPAIR="call-ansible-test-dev.key"
+ANS_KEYPAIR="shan-ansible-test-dev.key"
 AWS_REGION="us-east-1"
 aws ec2 delete-key-pair --region ${AWS_REGION} --key-name ${ANS_KEYPAIR}
 rm -rf ${ANS_KEYPAIR}
