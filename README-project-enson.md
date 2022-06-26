@@ -1819,7 +1819,7 @@ git push
 
 ```bash
 APP_NAME="Petclinic"
-ANS_KEYPAIR="call-ansible-test-dev.key"
+ANS_KEYPAIR="shan-ansible-test-dev.key"
 PATH="$PATH:/usr/local/bin"
 export ANSIBLE_PRIVATE_KEY_FILE="${WORKSPACE}/${ANS_KEYPAIR}"
 export ANSIBLE_HOST_KEY_CHECKING=False
@@ -1831,7 +1831,7 @@ ansible-inventory -v -i ./ansible/inventory/dev_stack_dynamic_inventory_aws_ec2.
 ```bash
 # Test dev dynamic inventory by pinging
 APP_NAME="Petclinic"
-ANS_KEYPAIR="call-ansible-test-dev.key"
+ANS_KEYPAIR="shan-ansible-test-dev.key"
 PATH="$PATH:/usr/local/bin"
 export ANSIBLE_PRIVATE_KEY_FILE="${WORKSPACE}/${ANS_KEYPAIR}"
 export ANSIBLE_HOST_KEY_CHECKING=False
