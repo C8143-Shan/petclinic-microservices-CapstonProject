@@ -2074,12 +2074,12 @@ git push
 
 ```bash
 APP_NAME="Petclinic"
-ANS_KEYPAIR="call-ansible-test-dev.key"
+ANS_KEYPAIR="shan-ansible-test-dev.key"
 PATH="$PATH:/usr/local/bin"
 export ANSIBLE_PRIVATE_KEY_FILE="${WORKSPACE}/${ANS_KEYPAIR}"
 export ANSIBLE_HOST_KEY_CHECKING=False
 # k8s setup
-ansible-playbook -i ./ansible/inventory/dev_stack_dynamic_inventory_aws_ec2.yaml ./ansible/playbooks/k8s_setup.yaml
+ansible-playbook -i ./ansible/inventory/dev_stack_dynamic_inventory_aws_ec2.yaml ./ansible/playbooks/k8s_setup.yml
 ```
 
 - After running the job above, replace the script with the one below in order to test tearing down the Kubernetes cluster infrastructure.
