@@ -1706,7 +1706,6 @@ git push origin dev
 git checkout dev
 git branch feature/msp-16
 git checkout feature/msp-16
-git push --set-upstream origin feature/msp-16
 ```
 
 - Create a Jenkins Job and name it as `test-creating-qa-automation-infrastructure` to test `bash` scripts creating QA Automation Infrastructure for `dev` manually.
@@ -1735,7 +1734,7 @@ terraform --version
 
 ```bash
 PATH="$PATH:/usr/local/bin"
-ANS_KEYPAIR="call-ansible-test-dev.key"
+ANS_KEYPAIR="shan-ansible-test-dev.key"
 AWS_REGION="us-east-1"
 aws ec2 create-key-pair --region ${AWS_REGION} --key-name ${ANS_KEYPAIR} --query "KeyMaterial" --output text > ${ANS_KEYPAIR}
 chmod 400 ${ANS_KEYPAIR}
@@ -1745,7 +1744,7 @@ chmod 400 ${ANS_KEYPAIR}
 
 ```bash
 PATH="$PATH:/usr/local/bin"
-ANS_KEYPAIR="call-ansible-test-dev.key"
+ANS_KEYPAIR="shan-ansible-test-dev.key"
 AWS_REGION="us-east-1"
 cd infrastructure/dev-k8s-terraform
 sed -i "s/mattkey/$ANS_KEYPAIR/g" main.tf
@@ -1756,7 +1755,7 @@ terraform apply -auto-approve
 - After running the job above, replace the script with the one below in order to test SSH connection with one of the instances.
 
 ```bash
-ANS_KEYPAIR="call-ansible-test-dev.key"
+ANS_KEYPAIR="shan-ansible-test-dev.key"
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ${WORKSPACE}/${ANS_KEYPAIR} ubuntu@172.31.91.243 hostname
 ```
 
