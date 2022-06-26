@@ -1691,7 +1691,7 @@ output worker-2-ip {
 
 ```bash
 git add .
-git commit -m 'added dev-k8s-terraform  for kubernetes infrastructure'
+git commit -m "added dev-k8s-terraform  for kubernetes infrastructure"
 git push --set-upstream origin feature/msp-15
 git checkout dev
 git merge feature/msp-15
@@ -1706,6 +1706,7 @@ git push origin dev
 git checkout dev
 git branch feature/msp-16
 git checkout feature/msp-16
+git push --set-upstream origin feature/msp-16
 ```
 
 - Create a Jenkins Job and name it as `test-creating-qa-automation-infrastructure` to test `bash` scripts creating QA Automation Infrastructure for `dev` manually.
