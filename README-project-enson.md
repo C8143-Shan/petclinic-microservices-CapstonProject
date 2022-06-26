@@ -1757,7 +1757,7 @@ terraform apply -auto-approve
 
 ```bash
 ANS_KEYPAIR="shan-ansible-test-dev.key"
-ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ${WORKSPACE}/${ANS_KEYPAIR} ubuntu@172.31.91.243 hostname
+ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ${WORKSPACE}/${ANS_KEYPAIR} ubuntu@172.31.6.37 hostname
 ```
 
 - Prepare static inventory file with name of `hosts.ini` for Ansible under `ansible/inventory` folder using Docker machines private IP addresses.
@@ -1780,7 +1780,7 @@ git push --set-upstream origin feature/msp-16
 
 ```bash
 PATH="$PATH:/usr/local/bin"
-ANS_KEYPAIR="call-ansible-test-dev.key"
+ANS_KEYPAIR="shan-ansible-test-dev.key"
 export ANSIBLE_INVENTORY="${WORKSPACE}/ansible/inventory/hosts.ini"
 export ANSIBLE_PRIVATE_KEY_FILE="${WORKSPACE}/${ANS_KEYPAIR}"
 export ANSIBLE_HOST_KEY_CHECKING=False
